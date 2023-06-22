@@ -18,13 +18,15 @@ public class RepairStore {
     public void displayRepairs() {
         System.out.println("Repair ID\tCustomer Email\tRepair Details\tPrice\t\tRepair Status");
         System.out.println("-----------------------------------------------------------");
-        for (Repair repair : repairs) {
+        for (int i = 0; i < repairs.size(); i++) {
+            Repair repair = repairs.get(i);
             System.out.printf("%d\t\t%s\t\t%s\t\t$%.2f\t\t%s\n",
                     repair.getRepairID(), repair.getCustomerEmail(), repair.getRepairDetail(),
                     repair.getPrice(), repair.getRepairStatus());
         }
         System.out.println("-----------------------------------------------------------");
     }
+
 
     private class Repair {
         private int repairID;
